@@ -19,7 +19,7 @@ jenkins:
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
-      - "Permission[class hudson.model.Hudson,Administer]:adminx"
+      - "Overall/Administer:adminx"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
