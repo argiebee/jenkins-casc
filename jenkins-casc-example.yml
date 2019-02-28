@@ -16,10 +16,18 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: adminx
+        password: ${JENKINS_PASS:-passw0rd}
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
       - "Overall/Read:anonymous"
+      - "Overall/Read:adminx"
       - "Overall/Administer:adminx"
   crumbIssuer:
     standard:
@@ -32,13 +40,6 @@ jenkins:
       name: "all"
   quietPeriod: 5
   scmCheckoutRetryCount: 2
-  securityRealm:
-    local:
-      allowsSignup: false
-      enableCaptcha: false
-      users:
-      - id: adminx
-        password: ${JENKINS_PASS:-passw0rd}
   slaveAgentPort: 50000
   views:
   - all:
