@@ -11,6 +11,7 @@ plugins:
     url: "https://updates.jenkins.io/update-center.json"
 jenkins:
   systemMessage: "Welcome to Jenkins." 
+  agentProtocols:
   - "JNLP4-connect"
   - "Ping"
   authorizationStrategy:

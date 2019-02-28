@@ -5,7 +5,7 @@ FROM jenkins/jenkins:2.166
 RUN /usr/local/bin/install-plugins.sh configuration-as-code configuration-as-code-support
  
 # set the default configuration as code yml
-ENV CASC_JENKINS_CONFIG https://github.com/argiebee/jenkins-casc/jenkins-casc-example.yml
+ENV CASC_JENKINS_CONFIG https://raw.githubusercontent.com/argiebee/jenkins-casc/master/jenkins-casc-example.yml
 
 # Setting up environment variables for Jenkins admin user - override when running
 ENV JENKINS_USER admin
