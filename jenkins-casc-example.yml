@@ -72,7 +72,7 @@ jobs:
                   scriptPath 'Jenkinsfile'
                   scm {
                     git {
-                        remote { url 'https://github.com/argiebee/jxspringbooteg.git' }
+                        remote { url 'https://github.com/argiebee/my-app.git' }
                         branch 'master'
                         extensions {}
                     }
