@@ -17,8 +17,6 @@ jenkins:
   - "JNLP4-connect"
   - "Ping"
   authorizationStrategy:
-    loggedInUsersCanDoAnything:
-      allowAnonymousRead: false
     globalMatrix:
       grantedPermissions:
       - "Permission[class hudson.model.Hudson,Administer]:adminx"
