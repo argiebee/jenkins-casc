@@ -17,6 +17,9 @@ jenkins:
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
+    globalMatrix:
+      grantedPermissions:
+      - "Permission[class hudson.model.Hudson,Administer]:adminx"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
@@ -56,3 +59,20 @@ tool:
           installers:
           - maven:
               id: "3.5.4"
+jobs:
+  - script: >
+      pipelineJob('pipeline') {
+          definition {
+              cpsScm {
+                  scriptPath 'Jenkinsfile'
+                  scm {
+                    git {
+                        remote { url 'https://github.com/argiebee/jxspringbooteg.git' }
+                        branch 'master'
+                        extensions {}
+                    }
+                  }
+              }
+          }
+      }
+

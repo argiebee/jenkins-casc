@@ -2,7 +2,7 @@
 FROM jenkins/jenkins:2.166
  
 # Installing the configuation as code plugins
-RUN /usr/local/bin/install-plugins.sh configuration-as-code configuration-as-code-support
+RUN /usr/local/bin/install-plugins.sh matrix-auth configuration-as-code configuration-as-code-support
  
 # set the default configuration as code yml
 ENV CASC_JENKINS_CONFIG https://raw.githubusercontent.com/argiebee/jenkins-casc/master/jenkins-casc-example.yml
