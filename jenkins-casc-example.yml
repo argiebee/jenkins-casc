@@ -19,8 +19,11 @@ jenkins:
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
-      - "Overall/Read:adminx"
       - "Overall/Administer:adminx"
+      - group:
+          name: "authenticated"
+          permissions:
+          - "Overall/Read"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
