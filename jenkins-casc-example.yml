@@ -19,11 +19,8 @@ jenkins:
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
+      - "Overall/Read:anonymous"
       - "Overall/Administer:adminx"
-      - group:
-          name: "authenticated"
-          permissions:
-          - "Overall/Read"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
@@ -47,6 +44,9 @@ jenkins:
   - all:
       name: "all"
 tool:
+  dockerTool:
+    installations:
+    - name: "docker"
   git:
     installations:
     - home: "git"
