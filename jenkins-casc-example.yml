@@ -1,0 +1,57 @@
+plugins:
+  required:
+    git: 3.9.1
+    pipeline-model-definition: 1.3.2
+    pipeline-stage-step: 2.3
+    pipeline-maven: 3.5.12
+    workflow-aggregator: 2.5
+    junit: 1.25
+  sites:
+  - id: "default"
+    url: "https://updates.jenkins.io/update-center.json"
+jenkins:
+  systemMessage: "Welcome to Jenkins." 
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  mode: NORMAL
+  numExecutors: 3
+  primaryView:
+    all:
+      name: "all"
+  quietPeriod: 5
+  scmCheckoutRetryCount: 2
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: adminx
+        password: ${JENKINS_PASS:-passw0rd}
+  slaveAgentPort: 50000
+  views:
+  - all:
+      name: "all"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    installations:
+    - home: "/docker-java-home"
+      name: "jdk"
+  maven:
+    installations:
+    - name: "maven"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.5.4"
