@@ -16,19 +16,6 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
-  securityRealm:
-    local:
-      allowsSignup: false
-      enableCaptcha: false
-      users:
-      - id: adminx
-        password: ${JENKINS_PASS:-passw0rd}
-  authorizationStrategy:
-    globalMatrix:
-      grantedPermissions:
-      - "Overall/Read:anonymous"
-      - "Overall/Read:adminx"
-      - "Overall/Administer:adminx"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
