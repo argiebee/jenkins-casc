@@ -45,13 +45,6 @@ jenkins:
   - all:
       name: "all"
 tool:
-  dockerTool:
-    installations:
-    - name: "docker"
-  git:
-    installations:
-    - home: "git"
-      name: "Default"
   jdk:
     installations:
     - home: "/docker-java-home"
