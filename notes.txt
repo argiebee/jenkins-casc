@@ -1,0 +1,1 @@
+docker run  --rm --name jenkins-casc  -e JENKINS_PASS=T1gg3r -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home argiebee/jenkins-casc-eg:2.166
